@@ -1,99 +1,85 @@
-/*
- * الاسم: حسونه حسن بله
- * الفصل: الفرقة الثانية
- * التخصص: هندسة حاسوب
-*/
+/* Name: Hasona hasan balla
+ * Class: second computer engineering
+ * Department: college of engineer - computer engineering*/
 #include <iostream>
-/*تضمين مكتبة الادخال و الاخراج للقيام بالعمليات المتعلقة بها*/
 #include <cmath>
-/*تضمين مكتبة الرياضيات التي تحتوي على دوال حسابية كالجذر التربيعي
- * و القوة و ما شابه*/
-#include <cstring>
-/*تضمين مكتبة الحروف للقيام بعمليات تتعلق بالمقارنة بين الحروف*/
-/*يتم استدعاء المكتبات لاستخدام محتوياتها في البرمجة*/
-using namespace std;
-/*استخدام فضاء الاسماء للمسمى std و هي تخبر المترجم ان الدوال و
- * المتغيرات مصرحة في مكان محدد من اغلب الدوال التي نستخدمها*/
-char shap[20];
-/*تعريف المتغير على انه يتكون من 20 حرف كحد اقصى*/
+/*these libraries are called to use what they contain of functions*/
+using namespace std;/*use it to not write std in every command*/
+int shap;
 float area, space, one, side, two, three, height, width, leng, base, radios;
-/*تعريف المتغيرات المذكورة على انها اعداد عشرية*/
 double const pi = 3.14;
-/*نقوم بتعريف المتغيرات التي سنستخدمها في الاكواد و نقوم بتعريف باي*/
+/*we define the variables we are going to use in the code and formulas like pi and area and radius and so...*/
 int main()
-/*هي الدالة الرئيسية في البرنامج و هي التي يبدأ منها تنفيذ
- * البرنامح و تكون موجودة في اي برنامج مهما كان
- * int تعني ان الدالة سترجع لنا قيمة عددية صحيحة */
 {
-	cout<<"\nقم بكتابة اسم الشكل الذي تريد حسابه: ";
-	/*هنا يمكنك ان تكتب اسم الشكل من الاشكال المطلوبة و هي triangle,rectangle,circle,square,polygon,ellipse*/
+	cout<<"choose the shape number: "<<endl;
+	cout<<"\n1- triangle";
+	cout<<"\n2- rectangle";
+	cout<<"\n3- square";
+	cout<<"\n4- circle";
+	cout<<"\n5- polygon";
+	cout<<"\n6- ellipse"<<endl;
+	cout<<"\nWrite the name of shape you are using: ";
+/*this tells the user to choose the shape he wants*/
 	cin>>shap;
-	/*هنا يبدا ادخال المستخدم للشكل الذي يريده قبل ان يبدا الشرط*/
-	if (strcmp(shap, "triangle") == 0){
-		/*الجملة الشرطية if من ضمن الجمل الشرطية الاكثر استخداما في لغة البرمجة 
-		 * و ابسطها كذلك و يمكن استكمال نسار تشغيل البرنامج بعدها بجملة else 
-		 * اذا لم يتحقق الشرط الاول*/
-		cout<<"طول قاعدة المثلث: ";
+	if (shap == 1){/*if is to execute the given block code based on the state of condition*/
+		cout<<"\nenter the length of triangle base: ";
 		cin>>base;
-		cout<<"ارتفاع المثلث: ";
+		cout<<"enter triangle height: ";
 		cin>>height;
-		cout<<"طول ضلع المثلث: ";
+		cout<<"enter length of first side triangle: ";
 		cin>>one;
-		cout<<"الضلع الثاني: ";
+		cout<<"the second side triangle length: ";
 		cin>>two;
-		cout<<"الضلع الثالث: ";
+		cout<<"the third side triangle: ";
 		cin>>three;
 		area=0.5*base*height;
-		space=one+two+three;/*يقوم البرنامج بحساب محيط و مساحه المثلث باستخدام القاعدة*/
+		space=one+two+three;/*this is the formula for use to calculate
+		triangle are and bound*/
 	}
-	/*يقوم else if بالذهاب الى الشرط التالي في حالة عدم تحقق الشرط الاول*/
-	else if (strcmp(shap, "rectangle") == 0){
-		cout<<"ادخل عرض المستطيل: ";
+	else if (shap == 2){
+		cout<<"\nenter the width of rectangle: ";
 		cin>>width;
-		cout<<"ادخل طول المستطيل: ";
+		cout<<"enter the length";
 		cin>>height;
-		area=width*height;
+		area=width*height;/*this is formula for rectangle are and the next
+		line is for its bound*/
 		space=2*(height + width);
-		/*هذه معادلات تم اخذها من كتب الرياضيات و تستخدم لايجاد مساحة
-		 * و محيط الاشكال الهندسية المطلوبة*/
 	}
-	else if (strcmp(shap, "square") == 0){
-		cout<<"ادخل طول الضلع: ";
+	else if (shap == 3){
+		cout<<"\nenter side square length: ";
 		cin>>leng;
-		area=leng*leng;
+		area=leng*leng;/*formula for calculation area of square and bound too*/
 		space=4*leng;
 	}
-	else if (strcmp(shap, "circle") == 0){
-		cout<<"ادخل نصف قطر الدائرة: ";
+	else if (shap == 4){
+		cout<<"\nenter circle radius: ";
 		cin>>radios;
 		area=pi*pow(radios, 2);
-		space=2*pi*radios;
+		space=2*pi*radios;/*formula for circle using only the given radius*/
 	}
-	else if (strcmp(shap, "polygon") == 0){
-		cout<<"ادخل طول نصف قطر المضلع: ";
+	else if (shap == 5){
+		cout<<"\nenter polygon radius: ";
 		cin>>side;
-		cout<<"ادخل طول ضلع المضلع: ";
+		cout<<"enter polygon side length: ";
 		cin>>leng;
-		area=0.5*side*5*leng;
+		area=0.5*side*5*leng;/*formula for polygon using given values*/
 		space=leng*5;
 	}
-	else if (strcmp(shap, "ellipse") == 0){
+	else if (shap == 6){
 		double big,small;
-		cout<<"ادخل طول المحور الكبير: ";
+		cout<<"\nenter length of big axis: ";
 		cin>>big;
-		cout<<"ادخل طول المحور الصغير: ";
+		cout<<"enter length of small axis: ";
 		cin>>small;
 		area=pi*big*small;
-		space=2*pi*sqrt((pow(big, 2)+pow(small, 2)) * 0.5);
+		space=2*pi*sqrt((pow(big, 2)+pow(small, 2)) * 0.5);/*formula for ellipse shape using length of axis (x,y)*/
 	}
 	else {
-		/*يقوم else بانهاء سلسلة if  حيث انه يستخدم عند عدم استيفاء
-		 * شروط الدالة if ليحدث شيء اخر*/
-		cout<<"لقد ادخلت اسم شكل خطأ";
+		cout<<"\nerror ... you entered something not found";/*shows error when nothing was found*/
 	}
-	/*بهذا السطر يتم عرض الجواب*/
-	cout<<"\n"<<"المساحة: "<<area<<endl;
-	cout<<"المحيط: "<<space<<endl;
+	/*show the calculations after runnung the formula on them*/
+	cout<<"\n"<<"Area: "<<area<<endl;
+	cout<<"Bound: "<<space<<endl;
 	return 0;
-	/*يتم انهاء الرنامج الان*/
+	/*this returns value to main to tell it the program is success*/
 }
